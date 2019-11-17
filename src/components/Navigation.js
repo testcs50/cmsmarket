@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Navigation = () => (
-    <div className="main__navigation">
-        <p>Журнал</p>
-        <p>Агентства</p>
-        <p>Инструменты</p>
-    </div>
+    <ul className="main__navigation">
+        <li><Link to="/404">Журнал</Link></li>
+        <li><Link to="/404">Агентства</Link></li>
+        <li><Link to="/instruments">Инструменты</Link></li>
+    </ul>
 );
 
 export default Navigation;
