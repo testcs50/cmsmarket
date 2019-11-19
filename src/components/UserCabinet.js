@@ -1,11 +1,33 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const UserCabinet = () => (
-    <ul className="main__user-cabinet">
-        <li><Link to="/favorites">Избранное</Link></li>
-        <li><Link to="/404">Поиск</Link></li>
-        <li><Link to="/404">Кабинет агентства</Link></li>
+    <ul className="main__user-room">
+        <li className="main__user-item">
+            <NavLink
+                className="main__user-link"
+                activeClassName="main__user-link--active"
+                to="/favorites"
+            >
+                Избранное
+            </NavLink>
+        </li>
+        <li className="main__user-item">
+            <NavLink
+                className="main__user-link"
+                to="/404"
+            >
+                Поиск
+            </NavLink>
+        </li>
+        <li className="main__user-item">
+            <NavLink
+                className="main__user-link"
+                to="/404"
+            >
+                Кабинет агентства
+            </NavLink>
+        </li>
     </ul>
 );
 

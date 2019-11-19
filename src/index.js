@@ -7,6 +7,8 @@ import store from './store';
 
 import Layout from './layout/Layout';
 
+import './styles/styles.scss';
+
 ReactDOM.render(
     <HashRouter>
         <Provider store={store}>

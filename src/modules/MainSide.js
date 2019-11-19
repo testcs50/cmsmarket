@@ -8,7 +8,7 @@ import NotFound from '../pages/NotFound';
 const MainSide = () => (
     <div className="main__main-side">
         <Switch>
-            <Route exact path="/">{Instruments}</Route>
+            <Route exact path="/" component={Instruments}/>
             <Route path="/instruments">{Instruments}</Route>
             <Route path="/favorites">{Favorites}</Route>
             <Route path="/404">{NotFound}</Route>
