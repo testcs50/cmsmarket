@@ -49,19 +49,44 @@ body {
         position: relative;
     }
 
+    &__user-item {
+        padding-left: 30px;
+    }
+
     &__navigation-link, &__user-link {
         color: black;
         font-size: 0.9rem;
         text-transform: uppercase;
         text-decoration: none;
 
+        .svg-icon {
+            stroke: black;
+        }
+
         &:hover {
             color: red;
+
+            .svg-icon {
+                stroke: red;
+            }
         }
 
         &--active {
             color: red;
             border-bottom: 2px solid red;
+
+            .svg-icon {
+                stroke: red;
+            }
+        }
+    }
+
+    &__user-link {
+        position: relative;
+
+        .svg {
+            position: absolute;
+            left: -30px;
         }
     }
 
@@ -103,7 +128,6 @@ body {
         justify-content: space-between;
         padding-top: 20px;
         padding-bottom: 20px;
-        color: gray;
         font-size: .7rem;
         font-weight: 700;
         text-transform: uppercase;
@@ -112,6 +136,7 @@ body {
             &:first-child {
                 width: 30%;
                 text-align: center;
+                color: rgba(0, 0, 0, .4);
             }
 
             &:not(:first-child) {
@@ -122,6 +147,7 @@ body {
             &:last-child {
                 width: 100px;
                 cursor: auto;
+                color: rgba(0, 0, 0, .4);
             }
         }
     }
@@ -152,6 +178,23 @@ body {
             &:last-child {
                 width: 100px;
             }
+        }
+
+        &-name {
+            position: relative;
+
+            .svg {
+                position: absolute;
+                left: -30px;
+
+                &-icon {
+                    stroke: red;
+                }
+            }
+        }
+
+        &-compare {
+            position: relative;
         }
     }
 
@@ -191,6 +234,16 @@ body {
             color: white;
             background-color: red;
         }
+    }
+
+    .cms__sponsor-tag {
+        position: absolute;
+        right: -25px;
+        font-weight: 500;
+        font-size: .7rem;
+        color: rgba(0, 0, 0, .4);
+        text-transform: uppercase;
+        transform: rotate(-90deg);
     }
 
     &__cms-pagination {

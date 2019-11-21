@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { IconStar, IconSearch, IconCabinet } from './svgIcons';
 
 const UserCabinet = props => (
     <ul className="main__user-room">
@@ -9,6 +10,7 @@ const UserCabinet = props => (
                 activeClassName="main__user-link--active"
                 to="/favorites"
             >
+                <IconStar />
                 Избранное
             </NavLink>
             {
@@ -20,6 +22,7 @@ const UserCabinet = props => (
                 className="main__user-link"
                 to="/404"
             >
+                <IconSearch />
                 Поиск
             </NavLink>
         </li>
@@ -28,6 +31,7 @@ const UserCabinet = props => (
                 className="main__user-link"
                 to="/404"
             >
+                <IconCabinet />
                 Кабинет агентства
             </NavLink>
         </li>

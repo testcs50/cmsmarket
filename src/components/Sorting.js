@@ -14,41 +14,113 @@ const Sorting = props => {
     return (
         <div className="main__instruments-headers">
             <div>Название</div>
-            <div onClick={
-                () => {
+            <div
+                onClick={
+                    () => {
 
-                    const sortType = 'works_count';
-                    const sortDesc = data.sorting.sort === sortType ? desc : true;
+                        const sortType = 'works_count';
+                        const sortDesc = data.sorting.sort === sortType ? desc : true;
 
-                    dispatch(sorting(sortType, sortDesc));
-                    dispatch(sortInstruments(data.data.current_page, sortType, sortDesc))
+                        dispatch(sorting(sortType, sortDesc));
+                        dispatch(sortInstruments(data.data.current_page, sortType, sortDesc))
+                    }
                 }
-            }>
-                Проекты
+                style={
+                    data.sorting
+                    ?
+                    (data.sorting.sort === 'works_count')
+                    ?
+                    { color: 'rgba(255, 0, 0, .4)' }
+                    :
+                    { color: 'rgba(0, 0, 0, .4)' }
+                    :
+                    { color: 'rgba(0, 0, 0, .4)' }
+                }
+            >
+                Проекты &#8194; 
+                {
+                    (data.sorting && data.sorting.sort === 'works_count')
+                    ?
+                    (data.sorting.desc)
+                    ?
+                    <span>&#9660;</span>
+                    :
+                    <span>&#9650;</span>
+                    :
+                    undefined
+                }
             </div>
-            <div onClick={
-                () => {
+            <div
+                onClick={
+                    () => {
 
-                    const sortType = 'partners_count';
-                    const sortDesc = data.sorting.sort === sortType ? desc : true;
+                        const sortType = 'partners_count';
+                        const sortDesc = data.sorting.sort === sortType ? desc : true;
 
-                    dispatch(sorting(sortType, sortDesc));
-                    dispatch(sortInstruments(data.data.current_page, sortType, sortDesc))
+                        dispatch(sorting(sortType, sortDesc));
+                        dispatch(sortInstruments(data.data.current_page, sortType, sortDesc))
+                    }
                 }
-            }>
-                Партнеры
+                style={
+                    data.sorting
+                    ?
+                    (data.sorting.sort === 'partners_count')
+                    ?
+                    { color: 'rgba(255, 0, 0, .4)' }
+                    :
+                    { color: 'rgba(0, 0, 0, .4)' }
+                    :
+                    { color: 'rgba(0, 0, 0, .4)' }
+                }
+            >
+                Партнеры &#8194; 
+                {
+                    (data.sorting && data.sorting.sort === 'partners_count')
+                    ?
+                    (data.sorting.desc)
+                    ?
+                    <span>&#9660;</span>
+                    :
+                    <span>&#9650;</span>
+                    :
+                    undefined
+                }
             </div>
-            <div onClick={
-                () => {
+            <div
+                    onClick={
+                    () => {
 
-                    const sortType = 'rate';
-                    const sortDesc = data.sorting.sort === sortType ? desc : true;
+                        const sortType = 'rate';
+                        const sortDesc = data.sorting.sort === sortType ? desc : true;
 
-                    dispatch(sorting(sortType, sortDesc));
-                    dispatch(sortInstruments(data.data.current_page, sortType, sortDesc))
+                        dispatch(sorting(sortType, sortDesc));
+                        dispatch(sortInstruments(data.data.current_page, sortType, sortDesc))
+                    }
                 }
-            }>
-                Оценка Пользователей
+                style={
+                    data.sorting
+                    ?
+                    (data.sorting.sort === 'rate')
+                    ?
+                    { color: 'rgba(255, 0, 0, .4)' }
+                    :
+                    { color: 'rgba(0, 0, 0, .4)' }
+                    :
+                    { color: 'rgba(0, 0, 0, .4)' }
+                }
+            >
+                Оценка Пользователей &#8194; 
+                {
+                    (data.sorting && data.sorting.sort === 'rate')
+                    ?
+                    (data.sorting.desc)
+                    ?
+                    <span>&#9660;</span>
+                    :
+                    <span>&#9650;</span>
+                    :
+                    undefined
+                }
             </div>
             <div>Сравнить</div>
         </div>

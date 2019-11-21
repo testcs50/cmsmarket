@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import addInstrument from '../actions/addInstrument';
 import deleteInstrument from '../actions/deleteInstrument';
 
+import { IconStar } from './svgIcons';
+
 const CMS = props => {
 
     const dispatch = useDispatch()
@@ -11,6 +13,9 @@ const CMS = props => {
     return (
         <div className="main__cms">
             <div className="main__cms-name">
+
+                { (props.isSponsor === 1 || props.id === 393) && <IconStar filling="red" /> }
+
                 <img className="main__cms-logo" src={ props.image } />
                 <div className="main__cms-title">{ props.title }</div>
             </div>
@@ -55,6 +60,7 @@ const CMS = props => {
                         <div className="main__cms-checkbox-sub">&#128504;</div>
                     </label>
                 }
+                { (props.isSponsor === 1 || props.id === 393) && <span className="cms__sponsor-tag">Спонсор</span> }
             </div>
         </div>
     );
