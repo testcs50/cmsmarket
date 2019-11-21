@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
+* {
+    outline: none;
+}
+
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    font-weight: 500;
 }
 
 .main {
     display: flex;
+    max-height: 100vh;
 
     &__left-side {
         width: auto;
@@ -30,8 +40,195 @@ body {
         padding: 40px 30px;
     }
 
+    &__navigation-item, &__user-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    &__user-item:first-child {
+        position: relative;
+    }
+
+    &__navigation-link, &__user-link {
+        color: black;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+            color: red;
+        }
+
+        &--active {
+            color: red;
+            border-bottom: 2px solid red;
+        }
+    }
+
+    &__user-link {
+        text-transform: none;
+        font-weight: 400;
+    }
+
+    &__user-notification {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: .3rem;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        font-size: .8rem;
+        font-weight: 500;
+        color: white;
+        background-color: red;
+        border-radius: 50%;
+    }
+
     &__main-side {
         flex-grow: 1;
-        overflow: scroll;
+        padding-left: 40px;
+        padding-right: 40px;
+        overflow: auto;
+    }
+
+    &__instruments {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__instruments-headers {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: gray;
+        font-size: .7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        > div {
+            &:first-child {
+                width: 30%;
+                text-align: center;
+            }
+
+            &:not(:first-child) {
+                width: 17.5%;
+                cursor: pointer;
+            }
+
+            &:last-child {
+                width: 100px;
+                cursor: auto;
+            }
+        }
+    }
+
+    &__cms {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        font-size: .85rem;
+        font-weight: 700;
+        border-bottom: 1px solid lightgray;
+
+        > div {
+            display: flex;
+            align-items: center;
+
+            &:first-child {
+                width: 30%;
+            }
+
+            &:not(:first-child) {
+                font-size: .75rem;
+                width: 17.5%;
+                font-weight: 500;
+            }
+
+            &:last-child {
+                width: 100px;
+            }
+        }
+    }
+
+    &__cms-logo {
+        width: 15%;
+        margin-right: 15px;
+    }
+
+    &__cms-checkbox {
+        display: none;
+
+        &:checked ~ .main__cms-checkbox-sub {
+            background-color: red;
+        }
+    }
+
+    &__cms-checkbox-sub {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        border: 1px solid red;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    &__delete-favorite, &__cms-page-button {
+        padding: 10px;
+        color: red;
+        background-color: white;
+        border: 1px solid red;
+        border-radius: 5px;
+
+        &:hover {
+            color: white;
+            background-color: red;
+        }
+    }
+
+    &__cms-pagination {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__cms-paging {
+        padding: 10px;
+        color: white;
+        background-color: red;
+        border-radius: 5px;
+        border: none;
+
+        &:hover {
+            color: red;
+            background-color: white;
+            border: 1px solid red;
+        }
+
+        &:disabled {
+            background-color: gray;
+
+            &:hover {
+                color: white;
+                background-color: gray;
+                border: none;
+            }
+        }
+    }
+
+    &__cms-page-form {
+        padding: 10px;
+        margin-right: 10px;
+        background-color: white;
+        border: 1px solid red;
+        border-radius: 5px;
     }
 }

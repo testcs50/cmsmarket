@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const UserCabinet = () => (
+const UserCabinet = props => (
     <ul className="main__user-room">
         <li className="main__user-item">
             <NavLink
@@ -11,6 +11,9 @@ const UserCabinet = () => (
             >
                 Избранное
             </NavLink>
+            {
+                (props.data.length > 0) && <div className="main__user-notification">{props.data.length}</div>
+            }
         </li>
         <li className="main__user-item">
             <NavLink

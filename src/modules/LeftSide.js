@@ -5,13 +5,13 @@ import Navigation from '../components/Navigation';
 import UserCabinet from '../components/UserCabinet';
 import HorizontalRule from '../components/HorizontalRule';
 
-const LeftSide = () => (
+const LeftSide = props => (
     <div className="main__left-side">
         <Brand/>
         <HorizontalRule/>
         <Navigation/>
         <HorizontalRule/>
-        <UserCabinet/>
+        <UserCabinet data={ props.data }/>
     </div>
 );
 
