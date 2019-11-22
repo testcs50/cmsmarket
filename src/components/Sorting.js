@@ -26,13 +26,9 @@ const Sorting = props => {
                     }
                 }
                 style={
-                    data.sorting
-                    ?
-                    (data.sorting.sort === 'works_count')
+                    (data.sorting && data.sorting.sort === 'works_count')
                     ?
                     { color: 'rgba(255, 0, 0, .4)' }
-                    :
-                    { color: 'rgba(0, 0, 0, .4)' }
                     :
                     { color: 'rgba(0, 0, 0, .4)' }
                 }
@@ -40,14 +36,12 @@ const Sorting = props => {
                 Проекты &#8194; 
                 {
                     (data.sorting && data.sorting.sort === 'works_count')
-                    ?
-                    (data.sorting.desc)
+                    &&
+                    ((data.sorting.desc)
                     ?
                     <span>&#9660;</span>
                     :
-                    <span>&#9650;</span>
-                    :
-                    undefined
+                    <span>&#9650;</span>)
                 }
             </div>
             <div
@@ -62,13 +56,9 @@ const Sorting = props => {
                     }
                 }
                 style={
-                    data.sorting
-                    ?
-                    (data.sorting.sort === 'partners_count')
+                    (data.sorting && data.sorting.sort === 'partners_count')
                     ?
                     { color: 'rgba(255, 0, 0, .4)' }
-                    :
-                    { color: 'rgba(0, 0, 0, .4)' }
                     :
                     { color: 'rgba(0, 0, 0, .4)' }
                 }
@@ -76,14 +66,12 @@ const Sorting = props => {
                 Партнеры &#8194; 
                 {
                     (data.sorting && data.sorting.sort === 'partners_count')
-                    ?
-                    (data.sorting.desc)
+                    &&
+                    ((data.sorting.desc)
                     ?
                     <span>&#9660;</span>
                     :
-                    <span>&#9650;</span>
-                    :
-                    undefined
+                    <span>&#9650;</span>)
                 }
             </div>
             <div
@@ -98,13 +86,9 @@ const Sorting = props => {
                     }
                 }
                 style={
-                    data.sorting
-                    ?
-                    (data.sorting.sort === 'rate')
+                    (data.sorting && data.sorting.sort === 'rate')
                     ?
                     { color: 'rgba(255, 0, 0, .4)' }
-                    :
-                    { color: 'rgba(0, 0, 0, .4)' }
                     :
                     { color: 'rgba(0, 0, 0, .4)' }
                 }
@@ -112,14 +96,12 @@ const Sorting = props => {
                 Оценка Пользователей &#8194; 
                 {
                     (data.sorting && data.sorting.sort === 'rate')
-                    ?
-                    (data.sorting.desc)
+                    &&
+                    ((data.sorting.desc)
                     ?
                     <span>&#9660;</span>
                     :
-                    <span>&#9650;</span>
-                    :
-                    undefined
+                    <span>&#9650;</span>)
                 }
             </div>
             <div>Сравнить</div>
